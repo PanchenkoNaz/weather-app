@@ -4,3 +4,27 @@
  * @copyright codewithsadee 2023 All rights reserved
  * @author codewithsadee <mohammadsadee24@gmail.com>
  */
+
+'use strich';
+
+const api_key = "7cb4de2f212a4aa533b815eb3b8ae485";
+
+/**
+ *  Fetch data from server
+ * @param {string} URL API url
+ * @param {Function} callback callback
+ */
+export const fetchData = function (URL, callback) {
+    fetch('${URL}&appid=${api_key}')
+        .then(res => res.json())
+        .then(data => callback(data));
+}
+
+export const url = {
+    currentWeather(lat, lon) {
+        return 'https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric'
+    },
+    forecast(lat, lon) {
+        return 'https://api.openweathermap.org/data/2.5/forecast?${lat}&${lon}&units=metric'
+    }
+}
