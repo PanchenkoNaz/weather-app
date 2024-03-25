@@ -47,6 +47,13 @@ export const getDate = function (dateUnix, timezone) {
     return '${weekDayName} ${date.getUTCDate()}, ${monthName}';
 }
 
+/**
+ * 
+ * @param {number} timeUnix Unix date in seconds
+ * @param {number} timezone Timezone shift from UTC in seconds 
+ * @returns {string} Time string. formate: "HH:MM AM/PM"
+ */
+
 export const getTime = function (timeUnix, timezone) {
     const date = new Date((timeUnix + timezone) * 1000);
     const hours = date.getUTCHours();
