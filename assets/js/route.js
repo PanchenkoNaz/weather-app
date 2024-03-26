@@ -14,7 +14,9 @@ const currentLocation = function() {
     window.navigator.geolocation.getCurrentPosition(res => {
         const { latitude, longitude } = res.coords;
 
-        updateWeather('lat=${latitude}', )
+        updateWeather('lat=${latitude}', 'lon=${longitude}');
+    }, err => {
+        window.location.hash = defaultLocation;
     });
     
 }
