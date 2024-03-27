@@ -68,12 +68,15 @@ searchField.addEventListener("input", function () {
                     <span class="m-icon">location_on</span>
                             
                     <div>
-                        <p class="item-title">London</p>
-                        <p class="label-2 item-subtitle">State of London, GB</p>
+                        <p class="item-title">${name}</p>
+                        <p class="label-2 item-subtitle">${state || ""} ${country}</p>
                     </div>
 
-                    <a href="#" class="item-link has-state" data-search-toggler></a>
+                    <a href="#/weather?lat=${lat}&lon=${lon}" class="item-link has-state" aria-label="${name} weather" data-search-toggler></a>
                     `;
+
+                    searchResult.querySelector("[data-search-list]").appendChild(searchItem);
+                    items.push(searchItem.querySelector("[data-search-toggler]"));
                 }
 
 
