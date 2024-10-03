@@ -7,7 +7,7 @@
 
 'use strict';
 
-const api_key = "83b36568a336ff4a8db95743669f69b9";
+const api_key = process.env.NEXT_PUBLIC_API_KEY;
 
 /**
  * Fetch data from server
